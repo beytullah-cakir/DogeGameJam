@@ -11,17 +11,27 @@ public class PlayerManager : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask groundLayer, stoneLayer, soilLayer;
+
+    private bool isSoil, isStone;
 
     public GameObject arrow;
-
     private Animator animator;
+    private AudioManager audioManager;
+
+    private float stepTime = 0.5f;  // Adım sesi süresi
+    private float stepTimer;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>(); // Sprite Renderer'ı al
-        animator = GetComponent<Animator>(); // Animator bileşenini al
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+    }
+
+    void Start()
+    {
+        audioManager = AudioManager.Instanse;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -37,9 +47,6 @@ public class PlayerManager : MonoBehaviour
 
             animator.SetBool("isWalking", moveInput.x != 0);
         }
-
-
-
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -52,15 +59,47 @@ public class PlayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(GameManager.Instance.isPlayer)
-        rb.linearVelocity = new Vector2(moveInput.x * speed, rb.linearVelocity.y);
+        if (GameManager.Instance.isPlayer)
+        {
+            transform.Translate(new Vector2(moveInput.x * speed * Time.deltaTime, 0));
+
+            // Eğer yürüyorsa ve zemindeyse adım sesi çal
+            if (isGrounded && moveInput.x != 0)
+            {
+                stepTimer -= Time.deltaTime;
+                if (stepTimer <= 0f)
+                {
+                    PlayStepSound();
+                    stepTimer = stepTime;
+                }
+            }
+        }
     }
 
     private void Update()
     {
         // Yere değip değmediğini kontrol et
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        isStone = Physics2D.OverlapCircle(groundCheck.position, 0.2f, stoneLayer);
+        isSoil = Physics2D.OverlapCircle(groundCheck.position, 0.2f, soilLayer);
 
         arrow.SetActive(GameManager.Instance.isPlayer);
+    }
+
+    private void PlayStepSound()
+    {
+        if (isStone)
+            audioManager.PlayStoneStep();
+        else if (isSoil)
+            audioManager.PlaySoilStep();
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Trap"))
+        {
+            LevelManager.Instance.LoadScene("Game");
+        }
     }
 }
