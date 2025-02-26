@@ -1,54 +1,51 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float jumpForce = 10f;
-    
+    public float speed = 5f;
+    public float jumpForce = 7f;
+    private Vector2 moveInput;
     private Rigidbody2D rb;
-    private Animator anim;
     private bool isGrounded;
+    private SpriteRenderer spriteRenderer;
 
-    void Start()
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Sprite Renderer'ı al
     }
 
-    void Update()
+    public void OnMove(InputAction.CallbackContext context)
     {
-        // Movement using transform.Translate
-        float moveInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector2.right * moveInput * moveSpeed * Time.deltaTime);
+        moveInput = context.ReadValue<Vector2>();
 
-       
-        
-        if (moveInput > 0)
-            transform.localScale = new Vector3(1, 1, 1);
-        else if (moveInput < 0)
-            transform.localScale = new Vector3(-1, 1, 1);
+        // Sağa sola dönme kontrolü
+        if (moveInput.x > 0)
+            spriteRenderer.flipX = false; // Sağ tarafa bak
+        else if (moveInput.x < 0)
+            spriteRenderer.flipX = true;  // Sol tarafa bak
+    }
 
-        // Jump
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.performed && isGrounded) // Sadece yere değdiğinde zıpla
         {
-            rb.AddForce(Vector2.up,ForceMode2D.Impulse);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
-
-        // Animation Control
-        anim.SetBool("isWalking", moveInput != 0); // Walking Animation
-        anim.SetBool("isGrounded", isGrounded); // Idle vs. Jump Animation
     }
 
-    // Ground check
-    void OnCollisionEnter2D(Collision2D collision)
+    private void FixedUpdate()
     {
-        if (collision.gameObject.CompareTag("Ground"))
-            isGrounded = true;
+        rb.linearVelocity = new Vector2(moveInput.x * speed, rb.linearVelocity.y);
     }
 
-    void OnCollisionExit2D(Collision2D collision)
+    private void Update()
     {
-        if (collision.gameObject.CompareTag("Ground"))
-            isGrounded = false;
+        // Yere değip değmediğini kontrol et
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 }
