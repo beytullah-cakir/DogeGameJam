@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 7
+  jumpForce: 16
   arrow: {fileID: 7259099938155316440}
   groundCheck: {fileID: 6780443654446745873}
   groundLayer:

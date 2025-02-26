@@ -3,12 +3,20 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioSource snowStep, stoneStep;
+    public AudioSource soil, stoneStep;
+
+    public static AudioManager Instanse;
 
 
-    public void PlaySnowStep()
+    void Awake()
     {
-        snowStep.Play();
+        Instanse=this;
+    }
+
+
+    public void PlaySoilStep()
+    {
+        soil.Play();
     }
 
     public void PlayStoneStep()

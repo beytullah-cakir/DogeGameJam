@@ -51,7 +51,7 @@ public class Cat : MonoBehaviour
     private void FixedUpdate()
     {
         if (!GameManager.Instance.isPlayer)
-            rb.linearVelocity = new Vector2(moveInput.x * speed, rb.linearVelocity.y);
+            transform.Translate(new Vector2(moveInput.x * speed*Time.deltaTime,0));
     }
 
     private void Update()
