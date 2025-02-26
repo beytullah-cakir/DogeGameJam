@@ -161,6 +161,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  arrow: {fileID: 2449558650433279292}
 --- !u!114 &5146561216220532055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,6 +417,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccd9a4538b36c3346a7fe83e49b90a12, type: 3}
+--- !u!1 &2449558650433279292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6305709415049350116, guid: ccd9a4538b36c3346a7fe83e49b90a12, type: 3}
+  m_PrefabInstance: {fileID: 8537969271372111576}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2570096389453533396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6185171667307826700, guid: ccd9a4538b36c3346a7fe83e49b90a12, type: 3}

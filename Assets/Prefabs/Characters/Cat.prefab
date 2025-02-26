@@ -161,6 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 7
+  arrow: {fileID: 7259099938155316440}
   groundCheck: {fileID: 6780443654446745873}
   groundLayer:
     serializedVersion: 2
@@ -420,6 +421,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccd9a4538b36c3346a7fe83e49b90a12, type: 3}
+--- !u!1 &7259099938155316440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6305709415049350116, guid: ccd9a4538b36c3346a7fe83e49b90a12, type: 3}
+  m_PrefabInstance: {fileID: 3692918310704549692}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7415675412147405104 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6185171667307826700, guid: ccd9a4538b36c3346a7fe83e49b90a12, type: 3}

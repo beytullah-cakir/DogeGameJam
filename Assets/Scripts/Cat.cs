@@ -3,12 +3,14 @@ using UnityEngine.InputSystem;
 
 public class Cat : MonoBehaviour
 {
-   public float speed = 5f;
+    public float speed = 5f;
     public float jumpForce = 7f;
     private Vector2 moveInput;
     private Rigidbody2D rb;
     private bool isGrounded;
     private SpriteRenderer spriteRenderer;
+
+    public GameObject arrow;
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -36,8 +38,6 @@ public class Cat : MonoBehaviour
             animator.SetBool("isWalking", moveInput.x != 0);
         }
 
-
-
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -50,13 +50,14 @@ public class Cat : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!GameManager.Instance.isPlayer)
-        rb.linearVelocity = new Vector2(moveInput.x * speed, rb.linearVelocity.y);
+        if (!GameManager.Instance.isPlayer)
+            rb.linearVelocity = new Vector2(moveInput.x * speed, rb.linearVelocity.y);
     }
 
     private void Update()
     {
         // Yere değip değmediğini kontrol et
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        arrow.SetActive(!GameManager.Instance.isPlayer);
     }
 }

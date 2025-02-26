@@ -13,6 +13,8 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    public GameObject arrow;
+
     private Animator animator;
 
     private void Awake()
@@ -58,5 +60,7 @@ public class PlayerManager : MonoBehaviour
     {
         // Yere değip değmediğini kontrol et
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+
+        arrow.SetActive(GameManager.Instance.isPlayer);
     }
 }
