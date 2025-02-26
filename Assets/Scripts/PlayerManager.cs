@@ -13,26 +13,36 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    private Animator animator;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>(); // Sprite Renderer'ı al
+        animator = GetComponent<Animator>(); // Animator bileşenini al
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
 
-        // Sağa sola dönme kontrolü
-        if (moveInput.x > 0)
-            spriteRenderer.flipX = false; // Sağ tarafa bak
-        else if (moveInput.x < 0)
-            spriteRenderer.flipX = true;  // Sol tarafa bak
+        if (GameManager.Instance.isPlayer)
+        {
+            if (moveInput.x > 0)
+                spriteRenderer.flipX = false;
+            else if (moveInput.x < 0)
+                spriteRenderer.flipX = true;
+
+            animator.SetBool("isWalking", moveInput.x != 0);
+        }
+
+
+
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && isGrounded) // Sadece yere değdiğinde zıpla
+        if (context.performed && isGrounded && GameManager.Instance.isPlayer)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
@@ -40,6 +50,7 @@ public class PlayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(GameManager.Instance.isPlayer)
         rb.linearVelocity = new Vector2(moveInput.x * speed, rb.linearVelocity.y);
     }
 

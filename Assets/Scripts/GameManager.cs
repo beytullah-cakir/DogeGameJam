@@ -2,15 +2,36 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private GameObject currentObject;
+    public bool isPlayer;
+
+    private PlayerManager playerScript;
+    private Cat catScript;
+
+
+    public static GameManager Instance;
+
+
+    void Awake()
     {
-        
+        Instance = this;
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+
+        isPlayer = true;
+
+    }
+
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            isPlayer = !isPlayer;
+        }
     }
+
+
+
 }

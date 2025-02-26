@@ -1,28 +1,62 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Cat : MonoBehaviour
 {
-    public Rigidbody2D rb; // Fizik bileşeni
-    private Transform forcePoint; // Kuvvetin uygulanacağı nokta
-    private Transform targetPoint; // Kuvvetin yönleneceği hedef nokta
-    public float forceAmount = 10f; // Kuvvet büyüklüğü
+   public float speed = 5f;
+    public float jumpForce = 7f;
+    private Vector2 moveInput;
+    private Rigidbody2D rb;
+    private bool isGrounded;
+    private SpriteRenderer spriteRenderer;
 
-    private void Start()
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
+
+    private Animator animator;
+
+    private void Awake()
     {
-        if (rb == null)
-            rb = GetComponent<Rigidbody2D>();
-
-        ApplyForce();
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Sprite Renderer'ı al
+        animator = GetComponent<Animator>(); // Animator bileşenini al
     }
 
-    void ApplyForce()
+    public void OnMove(InputAction.CallbackContext context)
     {
-        if (forcePoint == null || targetPoint == null) return;
+        moveInput = context.ReadValue<Vector2>();
 
-        // Hedef noktaya doğru yön vektörünü hesapla
-        Vector2 direction = (targetPoint.position - forcePoint.position).normalized;
+        if (!GameManager.Instance.isPlayer)
+        {
+            if (moveInput.x > 0)
+                spriteRenderer.flipX = false;
+            else if (moveInput.x < 0)
+                spriteRenderer.flipX = true;
 
-        // Belirlenen noktadan, hedefe doğru kuvvet uygula
-        rb.AddForceAtPosition(direction * forceAmount, forcePoint.position, ForceMode2D.Impulse);
+            animator.SetBool("isWalking", moveInput.x != 0);
+        }
+
+
+
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.performed && isGrounded && !GameManager.Instance.isPlayer)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if(!GameManager.Instance.isPlayer)
+        rb.linearVelocity = new Vector2(moveInput.x * speed, rb.linearVelocity.y);
+    }
+
+    private void Update()
+    {
+        // Yere değip değmediğini kontrol et
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 }
