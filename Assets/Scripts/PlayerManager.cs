@@ -31,9 +31,9 @@ public class PlayerManager : MonoBehaviour
         if (GameManager.Instance.isPlayer)
         {
             if (moveInput.x > 0)
-                spriteRenderer.flipX = false;
-            else if (moveInput.x < 0)
                 spriteRenderer.flipX = true;
+            else if (moveInput.x < 0)
+                spriteRenderer.flipX = false;
 
             animator.SetBool("isWalking", moveInput.x != 0);
         }
