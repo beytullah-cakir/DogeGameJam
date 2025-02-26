@@ -31,7 +31,7 @@ public class PlayerManager : MonoBehaviour
         // Jump
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            
+            rb.AddForce(Vector2.up,ForceMode2D.Impulse);
         }
 
         // Animation Control
