@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e6abdb616bdd6c1429c57473c428215f
+guid: 04c1f262ea10f2444802d4b39aa8ba6c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1692924951201596939
-    second: indir_0
+      213: 7140190660693252356
+    second: robott-Sheet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: indir_0
+      name: robott-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 736
-        height: 525
+        width: 320
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f9bb34f9b58188e0800000000000000
-      internalID: -1692924951201596939
+      spriteID: 409de27539d071360800000000000000
+      internalID: 7140190660693252356
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      indir_0: -1692924951201596939
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
