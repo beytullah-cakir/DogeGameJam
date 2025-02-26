@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 04c1f262ea10f2444802d4b39aa8ba6c
+guid: 03ac5c99b1b153f4c8497e3630eb8aea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7140190660693252356
-    second: robott-Sheet_0
+      213: -2987179049035696926
+    second: walking_0
+  - first:
+      213: -4154626181522259262
+    second: walking_1
+  - first:
+      213: -7423615830899905516
+    second: walking_2
+  - first:
+      213: 4036955197636849006
+    second: walking_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robott-Sheet_0
+      name: walking_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 17
+        y: 15
+        width: 30
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,96 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 409de27539d071360800000000000000
-      internalID: 7140190660693252356
+      spriteID: 2e4fcbd4b786b86d0800000000000000
+      internalID: -2987179049035696926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robott-Sheet_1
+      name: walking_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
+        x: 81
+        y: 15
+        width: 30
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3ff362df12c91424993dbe891886a138
-      internalID: -1373262406
+      spriteID: 2c204d3008dc756c0800000000000000
+      internalID: -4154626181522259262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robott-Sheet_2
+      name: walking_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 145
+        y: 15
+        width: 30
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9a68d36b59bc0514dac7e57ce9967fb2
-      internalID: 154685271
+      spriteID: 41cae3adbb40af890800000000000000
+      internalID: -7423615830899905516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robott-Sheet_3
+      name: walking_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
+        x: 209
+        y: 15
+        width: 30
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d294fba1d20005e488f2e809163e4172
-      internalID: -372550643
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: robott-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdc4366818d8cea409863f37501abad3
-      internalID: -38436069
+      spriteID: e6daf411d55260830800000000000000
+      internalID: 4036955197636849006
       vertices: []
       indices: 
       edges: []
@@ -226,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 406d57e3f27e985439756e9f928f7954
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -235,12 +222,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      robott-Sheet_0: 7140190660693252356
-      robott-Sheet_1: -1373262406
-      robott-Sheet_2: 154685271
-      robott-Sheet_3: -372550643
-      robott-Sheet_4: -38436069
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
