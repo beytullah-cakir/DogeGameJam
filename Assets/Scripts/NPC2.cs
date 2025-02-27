@@ -4,8 +4,8 @@ using DialogueEditor;
 public class NPC2 : MonoBehaviour
 {
     public NPCConversation conversation;
-    public GameObject karakter; // Karakter GameObject'ini buraya sürükleyin
-    public float etkilesimMesafesi = 2f; // Etkileþim mesafesini ayarlayýn
+    public GameObject karakter; // Karakter GameObject'ini buraya sï¿½rï¿½kleyin
+    public float etkilesimMesafesi = 2f; // Etkileï¿½im mesafesini ayarlayï¿½n
 
     private bool diyalogBasladi = false;
 
@@ -15,13 +15,12 @@ public class NPC2 : MonoBehaviour
 
         if (mesafe <= etkilesimMesafesi && !diyalogBasladi)
         {
-            if (Input.GetKeyDown(KeyCode.E)) // "E" tuþuna basýldýðýnda diyaloðu baþlat
-            {
-                DiyalogBaslat();
-            }
+
+            DiyalogBaslat();
+
         }
 
-        if (diyalogBasladi && Input.GetKeyDown(KeyCode.Q)) // "Q" tuþuna basýldýðýnda diyaloðu bitir
+        if (diyalogBasladi && Input.GetKeyDown(KeyCode.Q)) // "Q" tuï¿½una basï¿½ldï¿½ï¿½ï¿½nda diyaloï¿½u bitir
         {
             DiyalogBitir();
         }
@@ -30,16 +29,16 @@ public class NPC2 : MonoBehaviour
     void DiyalogBaslat()
     {
         diyalogBasladi = true;
-        ConversationManager.Instance.StartConversation(conversation); // Diyaloðu baþlat
+        ConversationManager.Instance.StartConversation(conversation); // Diyaloï¿½u baï¿½lat
     }
 
     void DiyalogBitir()
     {
         diyalogBasladi = false;
-        ConversationManager.Instance.EndConversation(); // Diyaloðu bitir
+        ConversationManager.Instance.EndConversation(); // Diyaloï¿½u bitir
     }
 
-    void OnDrawGizmosSelected() // Etkileþim mesafesini sahnede görselleþtir
+    void OnDrawGizmosSelected() // Etkileï¿½im mesafesini sahnede gï¿½rselleï¿½tir
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, etkilesimMesafesi);
