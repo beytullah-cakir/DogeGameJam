@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7976968286318327238}
   - component: {fileID: 5146561216220532055}
   - component: {fileID: 3144766782614250310}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,6 +161,12 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  stoneLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  soilLayer:
+    serializedVersion: 2
+    m_Bits: 0
   arrow: {fileID: 2449558650433279292}
 --- !u!114 &5146561216220532055
 MonoBehaviour:
@@ -338,7 +344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 577323008316599893}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,6 +417,10 @@ PrefabInstance:
     - target: {fileID: 6305709415049350116, guid: ccd9a4538b36c3346a7fe83e49b90a12, type: 3}
       propertyPath: m_Name
       value: PlayerArrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305709415049350116, guid: ccd9a4538b36c3346a7fe83e49b90a12, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
