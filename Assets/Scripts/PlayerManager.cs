@@ -1,12 +1,10 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
     public float speed = 5f;
     public float jumpForce = 7f;
-    private Vector2 moveInput;
     private Rigidbody2D rb;
     private bool isGrounded;
     private SpriteRenderer spriteRenderer;
@@ -20,7 +18,7 @@ public class PlayerManager : MonoBehaviour
     private Animator animator;
     private AudioManager audioManager;
 
-    private float stepTime = 0.5f;  // Adım sesi süresi
+    private float stepTime = 0.5f; // Adım sesi süresi
     private float stepTimer;
 
     private void Awake()
@@ -28,7 +26,6 @@ public class PlayerManager : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        
     }
 
     void Start()
@@ -36,41 +33,34 @@ public class PlayerManager : MonoBehaviour
         audioManager = AudioManager.Instanse;
     }
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        moveInput = context.ReadValue<Vector2>();
-
-        if (GameManager.Instance.isPlayer)
-        {
-            if (moveInput.x > 0)
-                spriteRenderer.flipX = true;
-            else if (moveInput.x < 0)
-                spriteRenderer.flipX = false;
-
-            animator.SetBool("isWalking", moveInput.x != 0);
-        }
-    }
-
-    public void OnJump(InputAction.CallbackContext context)
-    {
-        if (context.performed && isGrounded && GameManager.Instance.isPlayer)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            audioManager.PlayJump();
-
-        }
-    }
-
-    private void FixedUpdate()
+    void Update()
     {
         if (GameManager.Instance.isPlayer)
         {
-            transform.Translate(new Vector2(moveInput.x * speed * Time.deltaTime, 0));
-        }
-    }
+            float moveInput = Input.GetAxis("Horizontal");
 
-    private void Update()
-    {
+            // Yürüme Animasyonu
+            if (moveInput != 0)
+            {
+                spriteRenderer.flipX = moveInput > 0;
+                animator.SetBool("isWalking", true);
+            }
+            else
+            {
+                animator.SetBool("isWalking", false);
+            }
+
+            // Hareket
+            transform.Translate(Vector2.right * moveInput * speed * Time.deltaTime);
+
+            // Zıplama
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                audioManager.PlayJump();
+            }
+        }
+
         // Yere değip değmediğini kontrol et
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         isStone = Physics2D.OverlapCircle(groundCheck.position, 0.2f, stoneLayer);
@@ -79,18 +69,15 @@ public class PlayerManager : MonoBehaviour
         arrow.SetActive(GameManager.Instance.isPlayer);
     }
 
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Trap") || other.CompareTag("END"))
-        {
-            LevelManager.Instance.LoadScene("Game");
-        }
+        
         if (other.CompareTag("LevelEnd"))
         {
             GameManager.Instance.CharacterReachedEnd();
         }
-        if(other.CompareTag("Trap")){
+        if (other.CompareTag("Trap"))
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         if (other.CompareTag("Lord"))
@@ -101,7 +88,5 @@ public class PlayerManager : MonoBehaviour
         {
             LevelManager.Instance.LoadScene("MeetCat");
         }
-        
-
     }
 }

@@ -130,9 +130,7 @@ GameObject:
   - component: {fileID: 500805113}
   - component: {fileID: 500805112}
   m_Layer: 0
-  m_Name: "DALL\xB7E 2025-02-27 02.19.48 - A wide-angle 2D platformer-style scene
-    of a high mountainous sunset with a monk sitting at the edge of a cliff. The
-    background features an expansive v_0"
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,6 +222,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5146561216220532055, guid: 90f5845ba13833847845ba49eefbc27c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5146561216220532055, guid: 90f5845ba13833847845ba49eefbc27c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6661708551071736916, guid: 90f5845ba13833847845ba49eefbc27c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.758252
@@ -270,7 +276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8283984186684139316, guid: 90f5845ba13833847845ba49eefbc27c, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8746665451418925630, guid: 90f5845ba13833847845ba49eefbc27c, type: 3}
       propertyPath: m_Mass
@@ -284,7 +290,9 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7976968286318327238, guid: 90f5845ba13833847845ba49eefbc27c, type: 3}
+    - {fileID: 5146561216220532055, guid: 90f5845ba13833847845ba49eefbc27c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
