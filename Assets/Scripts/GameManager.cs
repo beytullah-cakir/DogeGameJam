@@ -33,11 +33,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && !Cat.isDead)
         {
             isPlayer = !isPlayer;
             UpdateCameraTarget(); // Kamera hedefini güncelle
         }
+        CatIsDead();
     }
 
     private void UpdateCameraTarget()
@@ -62,4 +63,20 @@ public class GameManager : MonoBehaviour
             reachedEndCount=0;
         }
     }
+
+    public void CatIsDead()
+    {
+        if (Cat.isDead)
+        {
+            cinemachineCamera.Target.TrackingTarget = player.transform;
+            Animator player_anm = player.GetComponent<Animator>();
+            SpriteRenderer renderer = player.GetComponent<SpriteRenderer>();
+            player_anm.enabled = false;
+            renderer.flipX = false;
+            
+        }
+    }
+
+
+   
 }

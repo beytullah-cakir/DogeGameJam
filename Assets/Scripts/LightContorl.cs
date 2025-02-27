@@ -1,21 +1,38 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
-public class LightContorl : MonoBehaviour
+public class LightControl : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Light2D sceneLight; 
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+        ChangeColor();
     }
 
     public void ChangeColor()
     {
-
+        if (Cat.isDead)
+        {
+            
+            if (sceneLight != null)
+            {
+                sceneLight.color = Color.red;
+            }
+        }
+        else
+        {
+            
+            if (sceneLight != null)
+            {
+                sceneLight.color = Color.white; // Normal ýþýk rengi
+            }
+        }
     }
 }

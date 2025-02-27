@@ -10780,7 +10780,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3900108755196472087, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -152
+      value: -123
       objectReference: {fileID: 0}
     - target: {fileID: 3900108755196472087, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11145,7 +11145,7 @@ GameObject:
   - component: {fileID: 1122332839}
   m_Layer: 0
   m_Name: Trap
-  m_TagString: Trap
+  m_TagString: END
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12065,6 +12065,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2102808310}
+  - component: {fileID: 2102808311}
   m_Layer: 0
   m_Name: LightControl
   m_TagString: Untagged
@@ -12087,6 +12088,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2102808311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102808309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 195149cb2d5ba8847b31972c460768a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneLight: {fileID: 378218011}
 --- !u!1 &2121209478
 GameObject:
   m_ObjectHideFlags: 0

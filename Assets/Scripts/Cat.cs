@@ -20,7 +20,9 @@ public class Cat : MonoBehaviour
 
     private Animator animator;
 
-    public bool isDead=false;
+    public static bool isDead=false;
+
+    
 
     private void Awake()
     {
@@ -81,8 +83,8 @@ public class Cat : MonoBehaviour
         }        
         if (other.CompareTag("END"))
         {
-            Destroy(gameObject);
-            isDead = true;
+            gameObject.SetActive(false);
+            isDead = true; 
         }
     }
 }
