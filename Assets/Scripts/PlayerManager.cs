@@ -57,6 +57,7 @@ public class PlayerManager : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             audioManager.PlayJump();
+
         }
     }
 
@@ -81,7 +82,7 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Trap"))
+        if (other.CompareTag("Trap") || other.CompareTag("END"))
         {
             LevelManager.Instance.LoadScene("Game");
         }
@@ -92,5 +93,15 @@ public class PlayerManager : MonoBehaviour
         if(other.CompareTag("Trap")){
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        if (other.CompareTag("Lord"))
+        {
+            LevelManager.Instance.LoadScene("LordScene");
+        }
+        if (other.CompareTag("MeetCat"))
+        {
+            LevelManager.Instance.LoadScene("MeetCat");
+        }
+        
+
     }
 }

@@ -1,13 +1,16 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using DialogueEditor;
+using System.Collections;
 
 public class NPC2 : MonoBehaviour
 {
-    public NPCConversation conversation;
-    public GameObject karakter; // Karakter GameObject'ini buraya s�r�kleyin
-    public float etkilesimMesafesi = 2f; // Etkile�im mesafesini ayarlay�n
+    public NPCConversation conversation; // Diyalog verisi
+    public GameObject karakter; // Oyuncu karakteri
+    public float etkilesimMesafesi = 2f; // Etkileşim mesafesi
+    public string yeniSahneAdi; // Hedef sahne adı
 
-    private bool diyalogBasladi = false;
+    private bool diyalogBasladi = false; // Diyalog başladı mı kontrolü
 
     void Update()
     {
@@ -15,30 +18,44 @@ public class NPC2 : MonoBehaviour
 
         if (mesafe <= etkilesimMesafesi && !diyalogBasladi)
         {
-
             DiyalogBaslat();
-
-        }
-
-        if (diyalogBasladi && Input.GetKeyDown(KeyCode.Q)) // "Q" tu�una bas�ld���nda diyalo�u bitir
-        {
-            DiyalogBitir();
         }
     }
 
     void DiyalogBaslat()
     {
         diyalogBasladi = true;
-        ConversationManager.Instance.StartConversation(conversation); // Diyalo�u ba�lat
+        ConversationManager.Instance.StartConversation(conversation);
+        StartCoroutine(DiyalogBitinceSahneDegistir());
+        Debug.Log("Diyalog başladı.");
     }
 
-    void DiyalogBitir()
+    IEnumerator DiyalogBitinceSahneDegistir()
     {
-        diyalogBasladi = false;
-        ConversationManager.Instance.EndConversation(); // Diyalo�u bitir
+        // Diyalog bitene kadar bekle
+        while (ConversationManager.Instance.IsConversationActive)
+        {
+            yield return null; // Bir sonraki frame'e kadar bekle
+        }
+
+        Debug.Log("Diyalog bitti, sahne değiştiriliyor...");
+        SahneDegistir();
     }
 
-    void OnDrawGizmosSelected() // Etkile�im mesafesini sahnede g�rselle�tir
+    void SahneDegistir()
+    {
+        if (!string.IsNullOrEmpty(yeniSahneAdi))
+        {
+            Debug.Log("Yeni sahne yükleniyor: " + yeniSahneAdi);
+            SceneManager.LoadScene(yeniSahneAdi);
+        }
+        else
+        {
+            Debug.LogWarning("Yeni sahne adı atanmadı! Sahne değiştirilemiyor.");
+        }
+    }
+
+    void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, etkilesimMesafesi);

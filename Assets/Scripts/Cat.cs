@@ -78,11 +78,7 @@ public class Cat : MonoBehaviour
         if (other.CompareTag("LevelEnd"))
         {
             GameManager.Instance.CharacterReachedEnd();
-        }
-        if (other.CompareTag("Trap"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+        }        
         if (other.CompareTag("END"))
         {
             Destroy(gameObject);

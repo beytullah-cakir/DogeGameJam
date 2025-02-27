@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2321104725216917007, guid: 6dde593c2ec7fec42bc551865c8ad07d, type: 3}
+      propertyPath: m_Text
+      value: "YOL ARKADA\u015EI"
+      objectReference: {fileID: 0}
     - target: {fileID: 4202814618933445089, guid: 6dde593c2ec7fec42bc551865c8ad07d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -237,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4647389221929788376, guid: 6dde593c2ec7fec42bc551865c8ad07d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: LordScene
+      value: Game
       objectReference: {fileID: 0}
     - target: {fileID: 4647389221929788376, guid: 6dde593c2ec7fec42bc551865c8ad07d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument

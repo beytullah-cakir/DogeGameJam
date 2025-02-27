@@ -8,6 +8,9 @@ TagManager:
   - LevelEnd
   - Trap
   - END
+  - Lord
+  - MeetCat
+  - End
   layers:
   - Default
   - TransparentFX
