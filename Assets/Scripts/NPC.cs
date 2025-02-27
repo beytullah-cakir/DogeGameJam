@@ -15,7 +15,7 @@ public class NPC : MonoBehaviour
     private void OnConversationEnd()
     {
         // Yeni sahneye geç
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("SecondGame");
         
         // Olayı temizle (tekrar çağrılmasını önlemek için)
         ConversationManager.OnConversationEnded -= OnConversationEnd;

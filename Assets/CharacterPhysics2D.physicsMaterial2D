@@ -6,9 +6,9 @@ PhysicsMaterial2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PLatform
+  m_Name: CharacterPhysics2D
   serializedVersion: 2
-  friction: 700
+  friction: 1
   bounciness: 0
-  m_FrictionCombine: 1
+  m_FrictionCombine: 0
   m_BounceCombine: 4
