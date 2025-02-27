@@ -1,5 +1,5 @@
-using UnityEngine;
 using Unity.Cinemachine;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,10 +15,11 @@ public class GameManager : MonoBehaviour
 
     public CinemachineCamera cinemachineCamera;
 
-    
     public static GameManager Instance;
 
     private int reachedEndCount = 0;
+    private bool playerReachedEnd = false;
+    private bool catReachedEnd = false;
 
     void Awake()
     {
@@ -45,22 +46,33 @@ public class GameManager : MonoBehaviour
     {
         if (isPlayer)
         {
-           cinemachineCamera.Target.TrackingTarget=player.transform;
+            cinemachineCamera.Target.TrackingTarget = player.transform;
         }
         else
         {
-            cinemachineCamera.Target.TrackingTarget=cat.transform;
+            cinemachineCamera.Target.TrackingTarget = cat.transform;
         }
     }
 
-    public void CharacterReachedEnd()
+    public void CharacterReachedEnd(GameObject character)
     {
-        reachedEndCount++;
+        if (character == player && !playerReachedEnd)
+        {
+            playerReachedEnd = true;
+            reachedEndCount++;
+        }
+        else if (character == cat && !catReachedEnd)
+        {
+            catReachedEnd = true;
+            reachedEndCount++;
+        }
 
         if (reachedEndCount >= 2) // İki karakter de ulaştıysa
         {
             LevelManager.Instance.LoadScene(nextLevel); // Yeni sahneye geç
-            reachedEndCount=0;
+            reachedEndCount = 0;
+            playerReachedEnd = false;
+            catReachedEnd = false;
         }
     }
 
@@ -73,8 +85,7 @@ public class GameManager : MonoBehaviour
             SpriteRenderer renderer = player.GetComponent<SpriteRenderer>();
             player_anm.enabled = false;
             renderer.flipX = false;
-            Invoke("LoadFinalScene",1.5f);
-            
+            Invoke("LoadFinalScene", 1.5f);
         }
     }
 
@@ -82,8 +93,4 @@ public class GameManager : MonoBehaviour
     {
         LevelManager.Instance.LoadScene("FinalScene");
     }
-    
-
-
-   
 }

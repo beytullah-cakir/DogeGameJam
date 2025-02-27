@@ -79,7 +79,7 @@ public class Cat : MonoBehaviour
     {
         if (other.CompareTag("LevelEnd"))
         {
-            GameManager.Instance.CharacterReachedEnd();
+            GameManager.Instance.CharacterReachedEnd(this.gameObject);
         }
         if (other.CompareTag("Trap"))
         {
