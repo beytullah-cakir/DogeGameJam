@@ -57,7 +57,7 @@ public class PlayerManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-                audioManager.PlayJump();
+                
             }
         }
 
