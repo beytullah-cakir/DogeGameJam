@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     
     public static GameManager Instance;
 
+    private int reachedEndCount = 0;
+
     void Awake()
     {
         Instance = this;
@@ -45,6 +47,16 @@ public class GameManager : MonoBehaviour
         else
         {
             cinemachineCamera.Target.TrackingTarget=cat.transform;
+        }
+    }
+
+    public void CharacterReachedEnd()
+    {
+        reachedEndCount++;
+
+        if (reachedEndCount >= 2) // İki karakter de ulaştıysa
+        {
+            LevelManager.Instance.LoadScene("Platform_2"); // Yeni sahneye geç
         }
     }
 }

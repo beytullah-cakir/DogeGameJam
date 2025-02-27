@@ -6621,7 +6621,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50a2582ecf59334a9ea4b26edcbba49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conveersation: {fileID: 0}
+  conversation: {fileID: 699544522}
+  kutucukBeklemeSuresi: 2
 --- !u!114 &699544522
 MonoBehaviour:
   m_ObjectHideFlags: 0

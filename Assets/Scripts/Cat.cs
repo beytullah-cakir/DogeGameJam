@@ -51,7 +51,7 @@ public class Cat : MonoBehaviour
     private void FixedUpdate()
     {
         if (!GameManager.Instance.isPlayer)
-            transform.Translate(new Vector2(moveInput.x * speed*Time.deltaTime,0));
+            transform.Translate(new Vector2(moveInput.x * speed * Time.deltaTime, 0));
     }
 
     private void Update()
@@ -59,5 +59,13 @@ public class Cat : MonoBehaviour
         // Yere değip değmediğini kontrol et
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         arrow.SetActive(!GameManager.Instance.isPlayer);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("LevelEnd"))
+        {
+            GameManager.Instance.CharacterReachedEnd();
+        }
     }
 }

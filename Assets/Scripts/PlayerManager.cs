@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -92,7 +93,7 @@ public class PlayerManager : MonoBehaviour
             audioManager.PlayStoneStep();
         else if (isSoil)
             audioManager.PlaySoilStep();
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -100,6 +101,13 @@ public class PlayerManager : MonoBehaviour
         if (other.CompareTag("Trap"))
         {
             LevelManager.Instance.LoadScene("Game");
+        }
+        if (other.CompareTag("LevelEnd"))
+        {
+            GameManager.Instance.CharacterReachedEnd();
+        }
+        if(other.CompareTag("Trap")){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
