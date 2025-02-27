@@ -1,10 +1,12 @@
 fileFormatVersion: 2
-guid: 1dfc425f21b876f479a450205d28a027
+guid: c5d9b49508ff55f4380c954ddfde78b1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2231530814560085736
-    second: kafa_0
+      213: 348823094198462918
+    second: "DALL\xB7E 2025-02-27 04.16.11 - A dark-themed 2D pixel art scene of
+      a cave. The cave is part of a platformer-style game, featuring rocky terrain,
+      stalactites hanging from the ceiling_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +115,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kafa_0
+      name: "DALL\xB7E 2025-02-27 04.16.11 - A dark-themed 2D pixel art scene of
+        a cave. The cave is part of a platformer-style game, featuring rocky terrain,
+        stalactites hanging from the ceiling_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1024
-        height: 1024
+        height: 739
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 819decc1c820801e0800000000000000
-      internalID: -2231530814560085736
+      spriteID: 6c9e62b81c447d400800000000000000
+      internalID: 348823094198462918
       vertices: []
       indices: 
       edges: []
