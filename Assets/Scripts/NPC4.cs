@@ -1,7 +1,7 @@
 using UnityEngine;
 using DialogueEditor;
 
-public class NPC4 : MonoBehaviour
+public class NPC5 : MonoBehaviour
 {
     public NPCConversation conversation;
     public float kutucukBeklemeSuresi = 2f; // Kutucuklar arasý bekleme süresi
@@ -45,6 +45,3 @@ public class NPC4 : MonoBehaviour
         }
     }
 }
-
-
-
