@@ -28,6 +28,7 @@ public class PlayerManager : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        
     }
 
     void Start()
@@ -55,6 +56,7 @@ public class PlayerManager : MonoBehaviour
         if (context.performed && isGrounded && GameManager.Instance.isPlayer)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            audioManager.PlayJump();
         }
     }
 
@@ -63,17 +65,6 @@ public class PlayerManager : MonoBehaviour
         if (GameManager.Instance.isPlayer)
         {
             transform.Translate(new Vector2(moveInput.x * speed * Time.deltaTime, 0));
-
-            // Eğer yürüyorsa ve zemindeyse adım sesi çal
-            if (isGrounded && moveInput.x != 0)
-            {
-                stepTimer -= Time.deltaTime;
-                if (stepTimer <= 0f)
-                {
-                    PlayStepSound();
-                    stepTimer = stepTime;
-                }
-            }
         }
     }
 
@@ -87,14 +78,6 @@ public class PlayerManager : MonoBehaviour
         arrow.SetActive(GameManager.Instance.isPlayer);
     }
 
-    private void PlayStepSound()
-    {
-        if (isStone)
-            audioManager.PlayStoneStep();
-        else if (isSoil)
-            audioManager.PlaySoilStep();
-
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {

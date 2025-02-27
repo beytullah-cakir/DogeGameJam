@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     private PlayerManager playerScript;
     private Cat catScript;
 
+    public string nextLevel;
+
     public CinemachineCamera cinemachineCamera;
 
     
@@ -56,7 +58,8 @@ public class GameManager : MonoBehaviour
 
         if (reachedEndCount >= 2) // İki karakter de ulaştıysa
         {
-            LevelManager.Instance.LoadScene("Platform_2"); // Yeni sahneye geç
+            LevelManager.Instance.LoadScene(nextLevel); // Yeni sahneye geç
+            reachedEndCount=0;
         }
     }
 }
