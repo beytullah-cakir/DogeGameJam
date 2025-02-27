@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Cat : MonoBehaviour
 {
@@ -15,13 +16,23 @@ public class Cat : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    private AudioManager audioManager;
+
     private Animator animator;
+
+    public bool isDead=false;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>(); // Sprite Renderer'ı al
         animator = GetComponent<Animator>(); // Animator bileşenini al
+       
+    }
+
+    void Start()
+    {
+        audioManager = AudioManager.Instanse;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -45,13 +56,14 @@ public class Cat : MonoBehaviour
         if (context.performed && isGrounded && !GameManager.Instance.isPlayer)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            audioManager.PlayJump();
         }
     }
 
     private void FixedUpdate()
     {
         if (!GameManager.Instance.isPlayer)
-            transform.Translate(new Vector2(moveInput.x * speed*Time.deltaTime,0));
+            transform.Translate(new Vector2(moveInput.x * speed * Time.deltaTime, 0));
     }
 
     private void Update()
@@ -59,5 +71,22 @@ public class Cat : MonoBehaviour
         // Yere değip değmediğini kontrol et
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         arrow.SetActive(!GameManager.Instance.isPlayer);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("LevelEnd"))
+        {
+            GameManager.Instance.CharacterReachedEnd();
+        }
+        if (other.CompareTag("Trap"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        if (other.CompareTag("END"))
+        {
+            Destroy(gameObject);
+            isDead = true;
+        }
     }
 }

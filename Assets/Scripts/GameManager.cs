@@ -11,10 +11,14 @@ public class GameManager : MonoBehaviour
     private PlayerManager playerScript;
     private Cat catScript;
 
+    public string nextLevel;
+
     public CinemachineCamera cinemachineCamera;
 
     
     public static GameManager Instance;
+
+    private int reachedEndCount = 0;
 
     void Awake()
     {
@@ -45,6 +49,17 @@ public class GameManager : MonoBehaviour
         else
         {
             cinemachineCamera.Target.TrackingTarget=cat.transform;
+        }
+    }
+
+    public void CharacterReachedEnd()
+    {
+        reachedEndCount++;
+
+        if (reachedEndCount >= 2) // İki karakter de ulaştıysa
+        {
+            LevelManager.Instance.LoadScene(nextLevel); // Yeni sahneye geç
+            reachedEndCount=0;
         }
     }
 }

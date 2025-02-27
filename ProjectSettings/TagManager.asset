@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - LevelEnd
+  - Trap
+  - END
   layers:
   - Default
   - TransparentFX
