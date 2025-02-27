@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioSource soil, stoneStep;
+    public AudioSource jump, changePlayer;
 
     public static AudioManager Instanse;
 
@@ -13,20 +13,21 @@ public class AudioManager : MonoBehaviour
         Instanse = this;
     }
 
-
-    public void PlaySoilStep()
+    public void PlayJump()
     {
-        soil.Play();
+        jump.Play();
     }
 
-    public void PlayStoneStep()
+    public void PlayChangePlayer()
     {
-        stoneStep.Play();
+        changePlayer.Play();
     }
+
+
 
     public void ButtonClick(AudioSource buttonClick)
     {
-       DontDestroyOnLoad(buttonClick.gameObject); // Sesi koru
+        DontDestroyOnLoad(buttonClick.gameObject); // Sesi koru
         buttonClick.Play();
     }
 

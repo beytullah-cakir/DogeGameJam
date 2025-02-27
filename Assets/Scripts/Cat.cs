@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Cat : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class Cat : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    private AudioManager audioManager;
+
     private Animator animator;
 
     private void Awake()
@@ -22,6 +25,12 @@ public class Cat : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>(); // Sprite Renderer'ı al
         animator = GetComponent<Animator>(); // Animator bileşenini al
+       
+    }
+
+    void Start()
+    {
+        audioManager = AudioManager.Instanse;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -45,6 +54,7 @@ public class Cat : MonoBehaviour
         if (context.performed && isGrounded && !GameManager.Instance.isPlayer)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            audioManager.PlayJump();
         }
     }
 
@@ -66,6 +76,10 @@ public class Cat : MonoBehaviour
         if (other.CompareTag("LevelEnd"))
         {
             GameManager.Instance.CharacterReachedEnd();
+        }
+        if (other.CompareTag("Trap"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
