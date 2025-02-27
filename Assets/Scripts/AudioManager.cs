@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        Instanse=this;
+        Instanse = this;
     }
 
 
@@ -24,5 +24,11 @@ public class AudioManager : MonoBehaviour
         stoneStep.Play();
     }
 
-    
+    public void ButtonClick(AudioSource buttonClick)
+    {
+       DontDestroyOnLoad(buttonClick.gameObject); // Sesi koru
+        buttonClick.Play();
+    }
+
+
 }
