@@ -1,10 +1,12 @@
 fileFormatVersion: 2
-guid: d8b6d36fdb227d84bb079a1045c71af0
+guid: b580054526bae6f40926843334139793
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6695950386315148514
-    second: BG_0
+      213: 3455679835325490436
+    second: "DALL\xB7E 2025-02-27 02.19.48 - A wide-angle 2D platformer-style scene
+      of a high mountainous sunset with a monk sitting at the edge of a cliff. The
+      background features an expansive v_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +115,14 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BG_0
+      name: "DALL\xB7E 2025-02-27 02.19.48 - A wide-angle 2D platformer-style scene
+        of a high mountainous sunset with a monk sitting at the edge of a cliff.
+        The background features an expansive v_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1024
+        width: 1792
         height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e13cb0ea9943313a0800000000000000
-      internalID: -6695950386315148514
+      spriteID: 4056e02508a05ff20800000000000000
+      internalID: 3455679835325490436
       vertices: []
       indices: 
       edges: []
@@ -147,8 +151,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      BG_0: -6695950386315148514
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
