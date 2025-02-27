@@ -20,6 +20,8 @@ public class Cat : MonoBehaviour
 
     private Animator animator;
 
+    public bool isDead=false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -80,6 +82,11 @@ public class Cat : MonoBehaviour
         if (other.CompareTag("Trap"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        if (other.CompareTag("END"))
+        {
+            Destroy(gameObject);
+            isDead = true;
         }
     }
 }

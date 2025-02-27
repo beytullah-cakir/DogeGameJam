@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - LevelEnd
   - Trap
+  - END
   layers:
   - Default
   - TransparentFX
