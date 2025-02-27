@@ -207,7 +207,7 @@ Transform:
   m_GameObject: {fileID: 66559591}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 48.5, y: 41.82, z: -10}
+  m_LocalPosition: {x: 35.01, y: 9.7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -300,9 +300,7 @@ GameObject:
   - component: {fileID: 120894859}
   - component: {fileID: 120894858}
   m_Layer: 0
-  m_Name: "DALL\xB7E 2025-02-27 04.16.11 - A dark-themed 2D pixel art scene of a
-    cave. The cave is part of a platformer-style game, featuring rocky terrain, stalactites
-    hanging from the ceiling_0 (2)"
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -371,12 +369,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120894857}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.5302, y: 35.3455, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -23.4781, y: -4.7494354, z: 0}
   m_LocalScale: {x: 3.0017579, y: 1.8319477, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1630497655}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &769406377
 GameObject:
@@ -389,9 +387,7 @@ GameObject:
   - component: {fileID: 769406379}
   - component: {fileID: 769406378}
   m_Layer: 0
-  m_Name: "DALL\xB7E 2025-02-27 04.16.11 - A dark-themed 2D pixel art scene of a
-    cave. The cave is part of a platformer-style game, featuring rocky terrain, stalactites
-    hanging from the ceiling_0 (3)"
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -460,12 +456,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769406377}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 56.357704, y: 49.447025, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -14.650597, y: 9.352089, z: 0}
   m_LocalScale: {x: 3.7342634, y: 2.0825, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1630497655}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &873366452
 GameObject:
@@ -64502,9 +64498,7 @@ GameObject:
   - component: {fileID: 1099574992}
   - component: {fileID: 1099574991}
   m_Layer: 0
-  m_Name: "DALL\xB7E 2025-02-27 04.16.11 - A dark-themed 2D pixel art scene of a
-    cave. The cave is part of a platformer-style game, featuring rocky terrain, stalactites
-    hanging from the ceiling_0 (4)"
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64573,12 +64567,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099574990}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.008072224, w: -0.9999674}
-  m_LocalPosition: {x: 71.0083, y: 40.094936, z: 0}
-  m_LocalScale: {x: 1.5860238, y: 1.5412022, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.008072225, w: -0.99996746}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5860239, y: 1.5412023, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1630497655}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.925}
 --- !u!1 &1172962724
 GameObject:
@@ -64591,9 +64585,7 @@ GameObject:
   - component: {fileID: 1172962726}
   - component: {fileID: 1172962725}
   m_Layer: 0
-  m_Name: "DALL\xB7E 2025-02-27 04.16.11 - A dark-themed 2D pixel art scene of a
-    cave. The cave is part of a platformer-style game, featuring rocky terrain, stalactites
-    hanging from the ceiling_0 (1)"
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64662,12 +64654,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172962724}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 55.5533, y: 21.3935, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.455002, y: -18.701437, z: 0}
   m_LocalScale: {x: 2.5280097, y: 2.3395987, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1630497655}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1175952573 stripped
 GameObject:
@@ -64690,13 +64682,17 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1872562687}
+    - target: {fileID: 610226473848943758, guid: 91fcf11d0816cf645b7cd690179d4cac, type: 3}
+      propertyPath: nextLevel
+      value: Platform_5
+      objectReference: {fileID: 0}
     - target: {fileID: 2374823152391421656, guid: 91fcf11d0816cf645b7cd690179d4cac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.5
+      value: 35.01
       objectReference: {fileID: 0}
     - target: {fileID: 2374823152391421656, guid: 91fcf11d0816cf645b7cd690179d4cac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 41.82
+      value: 9.7
       objectReference: {fileID: 0}
     - target: {fileID: 3610648685906965202, guid: 91fcf11d0816cf645b7cd690179d4cac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -64745,12 +64741,48 @@ PrefabInstance:
     - target: {fileID: 8775706841034917271, guid: 91fcf11d0816cf645b7cd690179d4cac, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1744836044}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91fcf11d0816cf645b7cd690179d4cac, type: 3}
+--- !u!1 &1630497654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1630497655}
+  m_Layer: 0
+  m_Name: Backgrounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1630497655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630497654}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 71.0083, y: 40.094936, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1725392272}
+  - {fileID: 1172962726}
+  - {fileID: 120894859}
+  - {fileID: 769406379}
+  - {fileID: 1099574992}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1725392270
 GameObject:
   m_ObjectHideFlags: 0
@@ -64762,9 +64794,7 @@ GameObject:
   - component: {fileID: 1725392272}
   - component: {fileID: 1725392271}
   m_Layer: 0
-  m_Name: "DALL\xB7E 2025-02-27 04.16.11 - A dark-themed 2D pixel art scene of a
-    cave. The cave is part of a platformer-style game, featuring rocky terrain, stalactites
-    hanging from the ceiling_0"
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64833,12 +64863,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725392270}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.5176, y: 11.0963, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -30.4907, y: -28.998636, z: 0}
   m_LocalScale: {x: 1.6909429, y: 2.289014, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1630497655}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1744836043
 PrefabInstance:
@@ -64909,6 +64939,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90f5845ba13833847845ba49eefbc27c, type: 3}
+--- !u!4 &1744836044 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6661708551071736916, guid: 90f5845ba13833847845ba49eefbc27c, type: 3}
+  m_PrefabInstance: {fileID: 1744836043}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1872562687 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4401905575849354822, guid: 90f5845ba13833847845ba49eefbc27c, type: 3}
@@ -65025,8 +65060,4 @@ SceneRoots:
   - {fileID: 1744836043}
   - {fileID: 1945949316}
   - {fileID: 1335353371}
-  - {fileID: 1725392272}
-  - {fileID: 1172962726}
-  - {fileID: 120894859}
-  - {fileID: 769406379}
-  - {fileID: 1099574992}
+  - {fileID: 1630497655}
