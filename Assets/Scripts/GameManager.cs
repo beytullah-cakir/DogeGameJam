@@ -73,9 +73,16 @@ public class GameManager : MonoBehaviour
             SpriteRenderer renderer = player.GetComponent<SpriteRenderer>();
             player_anm.enabled = false;
             renderer.flipX = false;
+            Invoke("LoadFinalScene",1.5f);
             
         }
     }
+
+    void LoadFinalScene()
+    {
+        LevelManager.Instance.LoadScene("FinalScene");
+    }
+    
 
 
    
