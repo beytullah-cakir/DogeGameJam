@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
 
     void Awake()
     {
-        Instance=this;
+        Instance = this;
     }
 
 
@@ -17,6 +17,7 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
 
 
 
