@@ -13,4 +13,9 @@ public class LightContorl : MonoBehaviour
     {
         
     }
+
+    public void ChangeColor()
+    {
+
+    }
 }
